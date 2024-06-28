@@ -32,3 +32,9 @@ select Name as Patient, Doctor, Hospital, Test_Results
 from health_data 
 where Admission_period >20 and Admission_Type = "Emergency"
 Order by Name Asc;
+
+-- count of patients by result of test.
+select Test_Results, Count(Name)
+From health_data
+Group by Test_Results
+Order by Test_Results Asc
